@@ -1,15 +1,17 @@
-import { View, Text} from 'react-native';
-import { Input, Task } from './src/components';
-import { styles } from './Styles'; 
+//Importaciones
+import React from 'react';
+//Importacion core components
+import { View } from 'react-native';
+//Importacion componente
+import AppContainer from './src/components/AppContainer/AppContainer';
+//Importacion estilos
+import { styles } from './Styles';
 
 export default function App() {
+  //Renderizado de mi app
   return (
     <View style={styles.app}>
-      <Input/>
-      <Text style={styles.titleApp}>Lista de tareas</Text>
-      <Task/>
-      <Task/>
-      <Task/>
+        <AppContainer />
     </View>
   );
 }

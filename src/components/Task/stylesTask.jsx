@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-    containerTask: {
+    task: {
         marginHorizontal: 40,
         marginVertical: 2,
         width: '80%',

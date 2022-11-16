@@ -1,13 +1,13 @@
 //Importaciones
 import React from 'react'
-import { Text, View } from 'react-native'
+import { Text, TouchableOpacity } from 'react-native'
 import { styles } from './stylesTask'
 
-export default function Task({ task }) {
+export default function Task({ task, onHandleSelected}) {
   return(
-      <View style={styles.containerTask}>
+      <TouchableOpacity style={styles.containerTask} onPress={() => onHandleSelected(task)}>
           <Text style={styles.task}>{task.value}</Text>
-      </View>  
+      </TouchableOpacity>  
   )
 
 }

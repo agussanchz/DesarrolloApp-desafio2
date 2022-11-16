@@ -12,7 +12,7 @@ export default function Input({task, onHandleChange, onHandleTask}) {
         style={styles.input}
         onChangeText={onHandleChange}
       />
-      <Button title='ADD' color='#ccd5ae' onPress={onHandleTask}/>
+      <Button disabled={!task} title='ADD' color='#ccd5ae' onPress={onHandleTask}/>
     </View>
   )
 }

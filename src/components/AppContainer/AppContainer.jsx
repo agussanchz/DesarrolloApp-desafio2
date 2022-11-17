@@ -25,7 +25,7 @@ export default function AppContainer() {
         setTaskList((prevTaskList) => [...prevTaskList, { id: Math.random().toString(), value: task }])
         setTask('')
     }
-  
+
     //Funcion para el boton de las tareas
     const onHandleSelected = (item) => {
         setSelectedTask(item);
@@ -46,7 +46,7 @@ export default function AppContainer() {
     const onHandleDeleteItem = () => {
         setTaskList((prevTaskList) => prevTaskList.filter((item) => item.id !== selectedTask.id))
         setModalVisible(!modalVisible);
-      }
+    }
 
     //Funcion para guardar el valor de lo que escribo en el input
     const onHandleChange = (text) => setTask(text);
@@ -54,14 +54,23 @@ export default function AppContainer() {
     //Renderizado y paso de props hacia mis componentes
     return (
         <View>
-            <Input task={task} onHandleTask={onHandleTask} onHandleChange={onHandleChange} />
+            <Input
+                task={task}
+                onHandleTask={onHandleTask}
+                onHandleChange={onHandleChange}
+            />
             <Text style={styles.titleApp}>Lista de tareas</Text>
             <FlatList
                 data={taskList}
                 renderItem={renderItem}
                 keyExtractor={item => item.id}
             />
-            <ModalContainer modalVisible={modalVisible} selectedTask={selectedTask} onHandleCancel={onHandleCancel} onHandleDeleteItem={onHandleDeleteItem} />
+            <ModalContainer
+                modalVisible={modalVisible}
+                selectedTask={selectedTask}
+                onHandleCancel={onHandleCancel}
+                onHandleDeleteItem={onHandleDeleteItem}
+            />
         </View>
     );
 }
